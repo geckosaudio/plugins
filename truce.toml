@@ -1,0 +1,46 @@
+[vendor]
+name = "GeckosAudio"
+id = "audio.geckos"
+url = "https://geckos.audio"
+au_manufacturer = "Geck"
+
+[[plugin]]
+name = "Pitch"
+bundle_id = "pitch"
+crate = "geckos-audio-pitch"
+category = "effect"
+fourcc = "Pitc"
+au_tag = "Effects"
+# VST3 secondary subcategory — drives the Cubase plugin submenu.
+# Tighten to your effect kind: "Delay", "Distortion", "Dynamics",
+# "EQ", "Filter", "Mastering", "Modulation", "Pitch Shift",
+# "Reverb", "Surround", "Analyzer", "Spatial". Leave as "Tools" for
+# generic utilities. Without this, Cubase buckets the plugin under
+# "Other".
+vst3_subcategory = "Tools"
+
+[[plugin]]
+name = "Meter"
+bundle_id = "meter"
+crate = "geckos-audio-meter"
+category = "effect"
+fourcc = "Mete"
+au_tag = "Effects"
+# VST3 secondary subcategory — drives the Cubase plugin submenu.
+# Tighten to your effect kind: "Delay", "Distortion", "Dynamics",
+# "EQ", "Filter", "Mastering", "Modulation", "Pitch Shift",
+# "Reverb", "Surround", "Analyzer", "Spatial". Leave as "Tools" for
+# generic utilities. Without this, Cubase buckets the plugin under
+# "Other".
+vst3_subcategory = "Tools"
+
+# Suite installer - bundles every plugin above into a single
+# `.pkg` (macOS), `.exe` (Windows) and `.tar.gz` (Linux) so end
+# users install the whole collection in one go. The per-plugin
+# installers still ship in parallel; pass `--no-per-plugin` to
+# `cargo truce package` to drop them. Add `plugins = [...]` /
+# `exclude_plugins = [...]` to scope the suite to a subset, or
+# `formats = [...]` to override the default-all.
+[[suite]]
+name = "GeckosAudio"
+bundle_id = "geckos-audio-suite"

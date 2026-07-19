@@ -1,0 +1,42 @@
+[package]
+name = "geckos-audio-meter"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[[bin]]
+name = "geckos-audio-meter-standalone"
+path = "src/main.rs"
+required-features = ["standalone"]
+
+# Scaffolded default: CLAP + VST3 + standalone. To add LV2 / AU / AAX / VST2,
+# uncomment the matching line in the root `Cargo.toml`'s
+# `[workspace.dependencies]`, then add the feature + optional dep
+# below (e.g. `lv2 = ["dep:truce-lv2"]` +
+# `truce-lv2 = { workspace = true, optional = true }`).
+# Each format feature gates the matching wrapper crate as an optional
+# dep.
+[features]
+default = ["clap", "vst3", "standalone"]
+clap = ["dep:truce-clap", "dep:clap-sys"]
+vst3 = ["dep:truce-vst3"]
+standalone = ["dep:truce-standalone"]
+shell = ["truce/shell"]
+# Flags any allocation your DSP makes on the audio thread in `process`.
+# Dev/test only: `cargo test --features rt-paranoid`. Off, zero-cost by
+# default.
+rt-paranoid = ["truce/rt-paranoid"]
+
+[dependencies]
+truce = { workspace = true }
+# Lightweight types for layout / theme / widget descriptions.
+truce-gui-types = { workspace = true }
+# Built-in renderer. Plugins that supply their own editor (egui /
+# iced / slint) can drop this dep.
+truce-gui = { workspace = true }
+truce-clap = { workspace = true, optional = true }
+truce-vst3 = { workspace = true, optional = true }
+truce-standalone = { workspace = true, features = ["gui"], optional = true }
+clap-sys = { version = "0.5", optional = true }
