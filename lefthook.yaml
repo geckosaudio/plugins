@@ -1,7 +1,7 @@
 pre-commit:
   commands:
     lint-and-format:
-      glob: "*.rs"
+      glob: "*.{rs,toml}"
       run: just format-and-lint
       stage_fixed: true
 
