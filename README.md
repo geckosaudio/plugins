@@ -1,3 +1,5 @@
+<img align="left" src="branding/icon.svg" style="border-radius: 8px;" width="128">
+
 <div align="center">
 
 # Geckos Audio Plugins
@@ -15,23 +17,19 @@
 
 ### Meter
 
-<div align="center">
-
-![Geckos Meter screenshot](screenshots/geckos-meter.png)
-
-</div>
-
 Easy & precise metering for input monitoring, recording pristine sound
+
+<div align="center">
+    <img src="screenshots/geckos-meter.png" style="border-radius: 8px;">
+</div>
 
 ### Tuner
 
-<div align="center">
-
-![Geckos Tuner screenshot](screenshots/geckos-tuner.png)
-
-</div>
-
 A real-time vocal pitch tracking application that accurately detects and visualizes the pitch of your voice with minimal latency
+
+<div align="center">
+    <img src="screenshots/geckos-tuner.png" style="border-radius: 8px;">
+</div>
 
 ## Contributors
 
