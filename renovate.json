@@ -2,7 +2,7 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["config:recommended"],
     "schedule": ["every weekend"],
-    "commitMessagePrefix": "chore(deps):",
+    "commitMessageLowerCase": "auto",
 	"vulnerabilityAlerts": {
 		"enabled": true,
 		"schedule": ["at any time"]
@@ -23,16 +23,19 @@
         {
             "matchUpdateTypes": ["patch"],
             "automerge": true,
-            "automergeType": "branch"
+            "automergeType": "branch",
+            "commitMessagePrefix": "⬆️ chore(deps):"
         },
         {
             "matchUpdateTypes": ["minor"],
             "automerge": true,
-            "automergeType": "pr"
+            "automergeType": "pr",
+            "commitMessagePrefix": "⬆️ chore(deps):"
         },
         {
             "matchUpdateTypes": ["major"],
-            "dependencyDashboardApproval": true
+            "dependencyDashboardApproval": true,
+            "commitMessagePrefix": "💥 chore(deps):"
         }
     ]
 }
