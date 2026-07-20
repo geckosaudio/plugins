@@ -12,6 +12,7 @@ truce-gui = { version = "6.3" }
 truce-gui-types = { version = "6.3" }
 truce-clap = { version = "6.3" }
 truce-vst3 = { version = "6.3" }
+truce-au = { version = "6.3" }
 truce-standalone = { version = "6.3" }
 
 clap-sys = "0.5"

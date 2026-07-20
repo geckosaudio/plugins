@@ -539,6 +539,7 @@ version = "0.1.0"
 dependencies = [
  "clap-sys",
  "truce",
+ "truce-au",
  "truce-clap",
  "truce-driver",
  "truce-gui",
@@ -554,6 +555,7 @@ version = "0.1.0"
 dependencies = [
  "clap-sys",
  "truce",
+ "truce-au",
  "truce-clap",
  "truce-driver",
  "truce-gui",
@@ -1862,6 +1864,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "truce-au"
+version = "6.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d9168fc2f0fa9b8f589e89518e200ddb103020652d317a6d24a44214132278aa"
+dependencies = [
+ "cc",
+ "crossbeam-queue",
+ "truce-core",
+ "truce-params",
+ "truce-shim-types",
+]
+
+[[package]]
 name = "truce-build"
 version = "6.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2048,6 +2063,12 @@ dependencies = [
  "truce-gui-types",
  "truce-params",
 ]
+
+[[package]]
+name = "truce-shim-types"
+version = "6.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d24abb900fc0dc4d9f46dd8b88150f68b2570993649e85c1cf12a7db94e06e8e"
 
 [[package]]
 name = "truce-standalone"
