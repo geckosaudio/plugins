@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["plugins/pitch", "plugins/meter"]
+members = ["plugins/geckos-tuner", "plugins/geckos-meter"]
 
 [workspace.package]
 version = "0.1.0"
@@ -16,19 +16,8 @@ truce-standalone = { version = "6.3" }
 
 clap-sys = "0.5"
 
-# Uncomment to opt in. After uncommenting here, add the matching
-# feature + optional dep to each plugin's Cargo.toml.
-# truce-lv2 = { version = "6.3" }
-# truce-au  = { version = "6.3" }
-# truce-aax = { version = "6.3" }
-# truce-vst2 = { version = "6.3" }
-
 truce-test = { version = "6.3.0" }
 truce-driver = { version = "6.3.0" }
 
-# Custom profile for `cargo truce install --shell`. The shell-mode
-# build lands at `target/shell/lib<crate>.dylib`, independent of
-# `target/release/` and `target/debug/`. Cargo profiles are workspace-
-# level so this entry covers every plugin in the workspace.
 [profile.shell]
 inherits = "release"

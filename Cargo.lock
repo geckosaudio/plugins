@@ -549,7 +549,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "geckos-audio-pitch"
+name = "geckos-audio-tuner"
 version = "0.1.0"
 dependencies = [
  "clap-sys",

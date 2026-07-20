@@ -14,13 +14,8 @@ pub struct GeckosAudioMeterParams {
 
 use GeckosAudioMeterParamsParamId as P;
 
-// The plugin struct is its own DSP state (`type DspState = Self`). The
-// shell owns it and preserves it across a hot-reload, so a code-only
-// reload keeps reverb tails and oscillator phase alive.
 #[derive(Default)]
 pub struct GeckosAudioMeter {
-    // Per-instance DSP state - filters, delay lines, phase counters.
-    // Fields need `Default`. Add them as your DSP grows.
 }
 
 impl PluginLogic for GeckosAudioMeter {
@@ -57,9 +52,6 @@ truce::plugin! {
     params: GeckosAudioMeterParams,
 }
 
-// Installs the real-time allocation checker under `--features rt-paranoid`
-// (a no-op otherwise). Wrap a driver run in `assert_no_audio_alloc` to
-// fail a test if `process` ever allocates. See the audio-testing guide.
 truce::enable_rt_paranoid!();
 
 #[cfg(test)]

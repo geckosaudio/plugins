@@ -2,7 +2,7 @@ use truce::prelude::*;
 use truce_gui_types::layout::{GridLayout, knob, widgets};
 
 #[derive(Params)]
-pub struct GeckosAudioPitchParams {
+pub struct GeckosAudioTunerParams {
     #[param(
         name = "Gain",
         range = "linear(-60, 6)",
@@ -12,19 +12,14 @@ pub struct GeckosAudioPitchParams {
     pub gain: FloatParam,
 }
 
-use GeckosAudioPitchParamsParamId as P;
+use GeckosAudioTunerParamsParamId as P;
 
-// The plugin struct is its own DSP state (`type DspState = Self`). The
-// shell owns it and preserves it across a hot-reload, so a code-only
-// reload keeps reverb tails and oscillator phase alive.
 #[derive(Default)]
-pub struct GeckosAudioPitch {
-    // Per-instance DSP state - filters, delay lines, phase counters.
-    // Fields need `Default`. Add them as your DSP grows.
+pub struct GeckosAudioTuner {
 }
 
-impl PluginLogic for GeckosAudioPitch {
-    type Params = GeckosAudioPitchParams;
+impl PluginLogic for GeckosAudioTuner {
+    type Params = GeckosAudioTunerParams;
     type DspState = Self;
 
     fn process(
@@ -44,7 +39,7 @@ impl PluginLogic for GeckosAudioPitch {
         ProcessStatus::Normal
     }
 
-    fn editor(params: Arc<GeckosAudioPitchParams>) -> Box<dyn Editor> {
+    fn editor(params: Arc<GeckosAudioTunerParams>) -> Box<dyn Editor> {
         truce_gui::default_editor(
             params,
             GridLayout::build(vec![widgets(vec![knob(P::Gain, "Gain")])]),
@@ -53,13 +48,10 @@ impl PluginLogic for GeckosAudioPitch {
 }
 
 truce::plugin! {
-    logic: GeckosAudioPitch,
-    params: GeckosAudioPitchParams,
+    logic: GeckosAudioTuner,
+    params: GeckosAudioTunerParams,
 }
 
-// Installs the real-time allocation checker under `--features rt-paranoid`
-// (a no-op otherwise). Wrap a driver run in `assert_no_audio_alloc` to
-// fail a test if `process` ever allocates. See the audio-testing guide.
 truce::enable_rt_paranoid!();
 
 #[cfg(test)]
