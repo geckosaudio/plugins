@@ -15,8 +15,7 @@ pub struct GeckosAudioMeterParams {
 use GeckosAudioMeterParamsParamId as P;
 
 #[derive(Default)]
-pub struct GeckosAudioMeter {
-}
+pub struct GeckosAudioMeter {}
 
 impl PluginLogic for GeckosAudioMeter {
     type Params = GeckosAudioMeterParams;
