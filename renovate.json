@@ -36,6 +36,10 @@
             "matchUpdateTypes": ["major"],
             "dependencyDashboardApproval": true,
             "commitMessagePrefix": "💥 chore(deps):"
+        },
+        {
+            "matchUpdateTypes": ["lockFileMaintenance", "pinDigest"],
+            "commitMessagePrefix": "⬆️ chore(deps):"
         }
     ]
 }
