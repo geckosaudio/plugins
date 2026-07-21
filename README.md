@@ -34,3 +34,8 @@ A real-time vocal pitch tracking application that accurately detects and visuali
 ## Contributors
 
 [![geckosaudio/plugins contributors](https://shieldcn.dev/contributors/geckosaudio/plugins.svg?title=false&preset=transparent&mode=dark&border=false)](https://github.com/geckosaudio/plugins/graphs/contributors)
+
+
+## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B63442%2Fgithub.com%2Fgeckosaudio%2Fplugins.svg?type=large&issueType=license)](https://app.fossa.com/projects/custom%2B63442%2Fgithub.com%2Fgeckosaudio%2Fplugins?ref=badge_large&issueType=license)
