@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: fossas/fossa-action@37f93d0aa19815e1bc2c9ff51125be5c0cd3f3b7 # main
+      - uses: fossas/fossa-action@c69e2692212f0cee0a8ff1bd36784e8784ac0349 # main
         with:
           api-key: ${{ secrets.FOSSA_API_KEY }}
-      - uses: fossas/fossa-action@37f93d0aa19815e1bc2c9ff51125be5c0cd3f3b7 # main
+      - uses: fossas/fossa-action@c69e2692212f0cee0a8ff1bd36784e8784ac0349 # main
         with:
           api-key: ${{ secrets.FOSSA_API_KEY }}
           run-tests: true
