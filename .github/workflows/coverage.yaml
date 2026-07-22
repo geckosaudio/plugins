@@ -18,7 +18,7 @@ jobs:
         with:
           components: llvm-tools-preview
       - uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
-      - uses: taiki-e/install-action@ea361d59ff285fa3ab7cc40dcba421e91017d586 # cargo-llvm-cov
+      - uses: taiki-e/install-action@ed87afb44e1aa5ecc737d1d8cad72f2eeb3d3fec # cargo-llvm-cov
       - run: |
           sudo apt-get update && sudo apt-get install -y libasound2-dev
 
